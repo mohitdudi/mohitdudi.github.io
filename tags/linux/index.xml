@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on Mohit</title>
-    <link>http://localhost:1313/tags/linux/</link>
+    <link>https://mohitdudi.github.io/tags/linux/</link>
     <description>Recent content in Linux on Mohit</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 20 Jun 2026 10:02:00 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mohitdudi.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Access Control Lists in linux</title>
-      <link>http://localhost:1313/posts/access-control-lists-linux/</link>
+      <link>https://mohitdudi.github.io/posts/access-control-lists-linux/</link>
       <pubDate>Sat, 20 Jun 2026 10:02:00 +0530</pubDate>
-      <guid>http://localhost:1313/posts/access-control-lists-linux/</guid>
+      <guid>https://mohitdudi.github.io/posts/access-control-lists-linux/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;applicable for both files and folders&lt;/li&gt;
 &lt;/ul&gt;
@@ -32,9 +32,9 @@
     </item>
     <item>
       <title>DWL install on Debian</title>
-      <link>http://localhost:1313/posts/dwl-install-debian/</link>
+      <link>https://mohitdudi.github.io/posts/dwl-install-debian/</link>
       <pubDate>Wed, 26 Feb 2025 10:19:00 +0530</pubDate>
-      <guid>http://localhost:1313/posts/dwl-install-debian/</guid>
+      <guid>https://mohitdudi.github.io/posts/dwl-install-debian/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;debian 12 was used to build wlroots 0.18 and dwl 0.7&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -62,9 +62,9 @@
     </item>
     <item>
       <title>Debian WiFi Issue</title>
-      <link>http://localhost:1313/posts/debian-wifi-issue/</link>
+      <link>https://mohitdudi.github.io/posts/debian-wifi-issue/</link>
       <pubDate>Thu, 30 Jan 2025 10:14:00 +0530</pubDate>
-      <guid>http://localhost:1313/posts/debian-wifi-issue/</guid>
+      <guid>https://mohitdudi.github.io/posts/debian-wifi-issue/</guid>
       <description>&lt;h2 id=&#34;what-happened&#34;&gt;What happened&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;I have faced this issue multiple times after installing debian&lt;/li&gt;

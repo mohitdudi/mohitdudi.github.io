@@ -179,9 +179,9 @@ Adding backport and testing repo’s Add following lines to your /etc/apt/source
     </h2>
   </header>
   <div class="entry-content">
-    <p> Figure 1: Fedora with dwl
-fedora 41 was used to build wlroots 0.18 and dwl 0.7
+    <p> fedora 41 was used to build wlroots 0.18 and dwl 0.7
 Install Required Packages Same packages are needed by both wlroots and dwl sudo dnf install make gcc libinput-devel meson wayland-devel wayland-utils wayland-protocols-devel waylandpp-devel libdrm-devel libxkbcommon-devel pixman-devel xcb-util-cursor-devel xcb-util-errors-devel xcb-util-xrm-devel xcb-util-devel mesa-libgbm-devel lcms2-devel vulkan-loader-devel glslang-devel libseat-devel hwdata-devel libdisplay-info-devel libliftoff-devel xcb-util-wm-devel xorg-x11-server-Xwayland xorg-x11-server-Xwayland-devel cairo-devel Wlroots Building wlroots is recommended as you can customize your build (enabling Xwayland support)
+Clone and build git clone --branch 0.18 https://gitlab.freedesktop.org/wlroots/wlroots.git cd wlroots/ meson setup build ninja -C build To enable Xwayland support edit meson.build and set x11-backend and xwayland to true in features
 ...</p>
   </div>
   <footer class="entry-footer">

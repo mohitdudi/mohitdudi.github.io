@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Mohit</title>
+    <link>http://localhost:1313/tags/linux/</link>
+    <description>Recent content in Linux on Mohit</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Jun 2026 10:02:00 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Access Control Lists in linux</title>
+      <link>http://localhost:1313/posts/access-control-lists-linux/</link>
+      <pubDate>Sat, 20 Jun 2026 10:02:00 +0530</pubDate>
+      <guid>http://localhost:1313/posts/access-control-lists-linux/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;applicable for both files and folders&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;getfacl filename
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# -m means modification&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;setfacl -m u:oggy:rw filename &lt;span style=&#34;color:#75715e&#34;&gt;# give user oggy read and write access to filename&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;setfacl -m g:staff:rw filename &lt;span style=&#34;color:#75715e&#34;&gt;# add permission for a group&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;setfacl -m u:oggy filename &lt;span style=&#34;color:#75715e&#34;&gt;# remove a entry&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;setfacl -b filename &lt;span style=&#34;color:#75715e&#34;&gt;# remove all entries&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# -R options recursively changes the acl for sub-directories&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>DWL install on Debian</title>
+      <link>http://localhost:1313/posts/dwl-install-debian/</link>
+      <pubDate>Wed, 26 Feb 2025 10:19:00 +0530</pubDate>
+      <guid>http://localhost:1313/posts/dwl-install-debian/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;debian 12 was used to build wlroots 0.18 and dwl 0.7&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;adding-backport-and-testing-repo-s&#34;&gt;Adding backport and testing repo&amp;rsquo;s&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Add following lines to your &lt;code&gt;/etc/apt/sources.list&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;These repo&amp;rsquo;s are required to pull some version specific packages
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;deb http://deb.debian.org/debian bookworm-backports main
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;deb http://deb.debian.org/debian sid main
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;install-required-packages&#34;&gt;Install Required Packages&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Same packages are needed by both wlroots and dwl&lt;/li&gt;
+&lt;li&gt;Some packages are pulled from backport and testing repo&amp;rsquo;s due to version requirements&lt;/li&gt;
+&lt;li&gt;This list of packages is not verbose (as of now)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt install -t bookworm-backports libwayland-server0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt install -t sid libliftoff-dev
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt install meson cmake libgbm-dev glslang-dev  glslang-tools libudev-dev libseat-dev hwdata libdisplay-info-dev libinput-dev libxcb-dri3-dev libxcb-present-dev libxcb-render-util0-dev libxcb-xinput-dev xwayland  libxcb-errors-dev libxcb-composite0-dev  libxcb-ewmh-dev libxcb-icccm4-dev libxcb-res0-dev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;wlroots&#34;&gt;Wlroots&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Building wlroots is recommended as you can customize your build (enabling Xwayland support)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Debian WiFi Issue</title>
+      <link>http://localhost:1313/posts/debian-wifi-issue/</link>
+      <pubDate>Thu, 30 Jan 2025 10:14:00 +0530</pubDate>
+      <guid>http://localhost:1313/posts/debian-wifi-issue/</guid>
+      <description>&lt;h2 id=&#34;what-happened&#34;&gt;What happened&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;I have faced this issue multiple times after installing debian&lt;/li&gt;
+&lt;li&gt;Each time during installation WiFi worked but after that it didn&amp;rsquo;t, initially I thought that there was some issue of firmware&lt;/li&gt;
+&lt;li&gt;But this time after installation wifi worked, but &lt;code&gt;nmcli device&lt;/code&gt; had a problem, it always showed that the device was &lt;code&gt;unmanaged&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;So I tried different things and finally was able to resolve the issue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;solution--source&#34;&gt;Solution (&lt;a href=&#34;https://www.linuxquestions.org/questions/linux-networking-3/wifi-card-device-or-resource-busy-4175479576/&#34;&gt;Source&lt;/a&gt;)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Just add the following line to your grub config (/etc/grub.d/10_linux)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;quiet splash acpi=force&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;After that generate grub config&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grub-mkconfig
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Now just reboot&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

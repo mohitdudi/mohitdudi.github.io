@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>R cheatsheet | Mohit</title>
+<meta name="keywords" content="">
+<meta name="description" content="Introduction
+
+
+R can be regarded as an implementation of the S language which was developed at Bell Laboratories
+
+
+Expression-language, case sensitive
+
+
+Special symbols allowed are . (dot) and _ (underscore)
+
+
+If name must start with ‘.’ or a letter, and if it starts with ‘.’ the second character must not be a digit. Names are effectively unlimited in length.
+
+
+Semicolon or newline separate commands
+
+
+Execute commands stored in a R file">
+<meta name="author" content="Mohit">
+<link rel="canonical" href="https://mohitdudi.github.io/posts/r-cheatsheet/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://mohitdudi.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://mohitdudi.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://mohitdudi.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://mohitdudi.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://mohitdudi.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://mohitdudi.github.io/posts/r-cheatsheet/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://mohitdudi.github.io/posts/r-cheatsheet/">
+  <meta property="og:site_name" content="Mohit">
+  <meta property="og:title" content="R cheatsheet">
+  <meta property="og:description" content="Introduction R can be regarded as an implementation of the S language which was developed at Bell Laboratories
+Expression-language, case sensitive
+Special symbols allowed are . (dot) and _ (underscore)
+If name must start with ‘.’ or a letter, and if it starts with ‘.’ the second character must not be a digit. Names are effectively unlimited in length.
+Semicolon or newline separate commands
+Execute commands stored in a R file">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="R cheatsheet">
+  <meta name="twitter:description" content="Introduction R can be regarded as an implementation of the S language which was developed at Bell Laboratories
+Expression-language, case sensitive
+Special symbols allowed are . (dot) and _ (underscore)
+If name must start with ‘.’ or a letter, and if it starts with ‘.’ the second character must not be a digit. Names are effectively unlimited in length.
+Semicolon or newline separate commands
+Execute commands stored in a R file">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://mohitdudi.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "R cheatsheet",
+      "item": "https://mohitdudi.github.io/posts/r-cheatsheet/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "R cheatsheet",
+  "name": "R cheatsheet",
+  "description": "Introduction R can be regarded as an implementation of the S language which was developed at Bell Laboratories\nExpression-language, case sensitive\nSpecial symbols allowed are . (dot) and _ (underscore)\nIf name must start with ‘.’ or a letter, and if it starts with ‘.’ the second character must not be a digit. Names are effectively unlimited in length.\nSemicolon or newline separate commands\nExecute commands stored in a R file\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Introduction R can be regarded as an implementation of the S language which was developed at Bell Laboratories\nExpression-language, case sensitive\nSpecial symbols allowed are . (dot) and _ (underscore)\nIf name must start with ‘.’ or a letter, and if it starts with ‘.’ the second character must not be a digit. Names are effectively unlimited in length.\nSemicolon or newline separate commands\nExecute commands stored in a R file\nsource(\"commands.R\") Output data to an external file\nsink(\"record.lis\") # writes the output to record.lis instead of printing it to stdout objects() or ls() returns the object currently stored in the session\nrm() can be used to remove an object\nrm(list = ls()) # remove every object present in memory Packages library() function (with no args) returns list of installed packages getOption(\"defaultPackages\") returns the list of packages automatically loaded during startup chooseCRANmirror() function provides a menu to choose a mirror setRepositories() function provides a menu to select the repos you want to use update.packages() simply updates all existing packages search() returns list of loaded packages install.packages(\"pacman\") # install the package manager # install.packages(c(\"pkg1\", \"pkg2\")) # install multiple packages at once library(pacman) # import without a conformation message, not known require(pacman) # import with a confirmation message pacman::p_load(pacman, ggplot2) # alternative way of loading packages # detach(ggplot2, unload=TRUE) # detach a package, and unload the namespace p_unload(ggplot2) # unload package/s p_unload(all) # unload all packages # remove.packages(c(\"pkg1\", \"pkg2\")) # remove multiple packages at once Assignment x \u003c- c(5, 4, 3, 2, 1) # c(5, 4, 3, 2, 1) -\u003e x # alternative y \u003c- c(1, 2, 3, 4, 5) assign(\"z\", c(10, 20, 30)) Data Types String Character Integer Double Array lt \u003c- 1:10 # create a list 'lt' with number from 1 to 10 abs(lt) # applies abs() to every element of lt and prints it lt * 2 # returns a new vector with each element multiplied by 2 c(lt, 0, lt) -\u003e js # stores a vector consisiting of the elements of lt, then 0 and again the elements of lt Type conversion as.integer(), as.double(), as.character() x \u003c- \"10\" # 10 is a string here as.integer(x) # returns x as integer Special Inf and -Inf represent infinite values NA represent Not Available NaN means Not a Number NULL means nothing Input/Output Read a value from user readline(\"What is your name?\") Print value to stdout print(\"hello\") # directly print values to console paste(\"hello, \", name, sep=\"\") # concatinate string and print them to console # instead of setting sep=\"\", you can just use paste0() File Handling Create a new file\nfile.create(\"hello.R\") Change working directory\nsetwd(\"./code\") Read table from a file\nread.table(\"votes.csv\") # votes \u003c- read.table(\"election.csv\", sep=\",\", header = TRUE) # read a csv file Read table from a .csv file\nread.csv(\"votes.csv\") Save a R object into a .Rdata file\nsave(dailyCosts, file = \"dailyCosts.Rdata\") Objects View(obj_name) opens another tab to display an object Tables (Frames) tbName[row, column] gives a element stored at particular row and column of a table\ntbName[, 1] gives the first column of table\ntbName$columnName gives you list of elements in the given column\nrowNames(votes) gives you the list of row names, and colNames(votes) gives the list of column names\nncol(votes) returns number of columns and nrow(votes) returns number of columns\nunique(votes$voter_category) returns a vector of unique values present inside voter_category column\nvotes \u003c- read.csv(\"election.csv\") # votes$poll # returns vector of values in poll column # votes$poll + votes $mail # this adds up the values of the given two columns for each row votes$total \u003c- votes$poll + votes$mail # create a new column that contains sum of poll and mail value for each row # write data back to a csv file, row.names prints the row indexes write.csv(votes, \"election.csv\", row.names = FALSE) # replaces the values with labels, and excludes -1 factor(votes$Q21, label = c(\"Yes\", \"No\", \"Undecided\"), exclude = c(-1) ) # remove rows where poll is NA votes \u003c- votes[!is.na(votes$poll)] subset() method can be used to generate subsets\n# generate a subset of spending table, where the Item Name column is equal to \"Mother Dairy Cow Milk\" milkSpend \u003c- subset(spending, `Item Name` == \"Mother Dairy Cow Milk\") rbind() can be used to combine multiple data frames print\nsales \u003c- rbind(q1, q2, q3, q4) # combine sales from all four quarters Vectors Create a vector from existing vector\nmarks \u003c- c(15, 19, 10, 9, 20, 5) marksFailed \u003c- marks[c(4, 6)] # 9, 5 marksPassed \u003c- marks[-c(4, 6)] # 15, 19, 10, 20 Relational operations on vectors\nmarks \u003c- c(15, 19, 10, 9, 20, 5) marks \u003e 10 # TRUE TRUE FALSE FALSE TRUE FALSE which() function can be used, it returns the indices of elements that are true\nmarks \u003c- c(15, 19, 10, 9, 20, 5) which(marks \u003e 10) # 1 2 5 marks[(which(marks \u003e 10))] # 15, 19, 20 vectors use \u0026 and | for logical operations, while \u0026\u0026 and || are used for single values\nany() function tells if there is any value that satisfies the condition or not\nmarks \u003c- c(15, 19, 10, 9, 20, 5) any(marks \u003e 10) all() is the opposite of any() and tells if all of the elements of vector satisfy the condition or not\nFunctions x \u003c- -12; abs(x); # 12 data(); # returns info about built in datasets head(mtcars); # shows first 6 entries of mtcars dataset str(mtcars); # display the structure (column name, its data type and initial values) of mtcars dataset sum(x, 12, 30) Defining functions getInt \u003c- function(prompt = \"Enter Integer: \") { votes \u003c- as.integer(readline(prompt)) # return(votes) # ommited as R automatically returns last value } Data Visualization R by default provides graphics library to visualize data, other more advanced packages can also be used like ggplot2\nScatter Plot\nplot ( x = mtcars$mpg, y = mtcars$wt, main = \"Scatter Plot: Weight vs Miles Per Gallon\", xlab = \"Miles Per Gallon\", ylab = \"Weight\", col = \"red\", pch = \"*\", # plotting character (can be a symbol or a integer code) cex = 1.5 # represents the size of plotting character (1 means default) ) grid() # turns on grid Single Line Plot\ntime_vec \u003c- 1:10 var1 \u003c- cumsum(rnorm(10)) plot( x = time_vec, y = var1, type = \"b\", col = \"darkgreen\", lwd = 2, pch = 16, main = \"Single Line Plot\", xlab = \"Day\", ylab = \"Value\" ) Plot Function Note: ann parameter doesn’t work in RStudio\nLine Types\nSolid Dashed Dotted DotDash LongDash TwoDash plot(mtcars$cyl, mtcars$mpg, ann = FALSE); # ann parameter control the default annotation (xlab and ylab) plot(mtcars$disp, mtcars$mpg, ann = FALSE, xlim = c(0, 500), ylim = c(0, 35)) plot(data, type = 'l') # simple line graph plot(data, type = 'b') # points highlighted with circle plot(data, type = 'o') # same as 'b', point are over line plot(data, type = 'c') # instead of points, lines cut plot(data, type = 'b', col = \"blue\") # blue colored line plot(data, type = 'b', col = \"red\", lty = 2) # line type (2 means dashed) plot(data, type = 'b', col = \"red\", lty = 2, lwd = 2.5) # line width plot(data, type = 'b', col = \"red\") points(data, col = \"blue\", pch = 23, cex = 1.5, bg = \"lightblue\") # create diamond shaped points # two line graph in same plane plot(data1, type = 'b', xlim=c(1, 20), ylim=c(1,20)) lines(data2, type = 'b', col = \"red\") # put labels on x-axis after creation of graph plot( rainfall, main = \"Monthly Rainfall\", xlab = \"Months\", ylab = \"Rainfall\", ylim = c(0, 150), ann = FALSE) axis(1, at = 1:6, labels = month) Barplot dealer \u003c- c(\"A\", \"B\", \"C\", \"D\") cars_sold \u003c- c(25, 40, 30, 50) barplot(cars_sold,names.arg = dealer, main = \"Bar Chart: Cars sold by dealers\", xlab=\"Dealers\", ylab = \"Cars Sold\") #names.arg is a list of values to be displayed under the bars Help help.start() loads the R documentation in html If you use help() it will look for the item’s help page. If it doesn’t encounter any conflicts, then it will just present the man page otherwise it will show the search results Alternatively you can use help.search(\"crayon\") or ??crayon 1 to search for man pages, instead of directly loading the relevant one example(\"crayon\") 1 will return an example usage of the topic ?mpg # returns info about mpg dataset help(mpg) # alternative way ?View() # returns info about View() function FAQ Assignment in R: Assignment operator or equals sign? Rstudio shortcuts C-RETURN - Run the code (runs the current line in console) C-l - clear console References R Manual Crayon is a package for colored terminal output ↩︎ ↩︎\n",
+  "wordCount" : "1431",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Mohit"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mohitdudi.github.io/posts/r-cheatsheet/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mohit",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mohitdudi.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="https://mohitdudi.github.io/" accesskey="h" title="Mohit (Alt + H)">Mohit</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      R cheatsheet
+    </h1>
+    <div class="post-meta">
+
+<span>Mohit</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
+<ul>
+<li>
+<p>R can be regarded as an implementation of the S language which was developed at Bell Laboratories</p>
+</li>
+<li>
+<p>Expression-language, case sensitive</p>
+</li>
+<li>
+<p>Special symbols allowed are . (dot) and _ (underscore)</p>
+</li>
+<li>
+<p>If name must start with ‘.’ or a letter, and if it starts with ‘.’ the second character must not be a digit. Names are effectively unlimited in length.</p>
+</li>
+<li>
+<p>Semicolon or newline separate commands</p>
+</li>
+<li>
+<p>Execute commands stored in a R file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">source</span>(<span style="color:#e6db74">&#34;commands.R&#34;</span>)
+</span></span></code></pre></div></li>
+<li>
+<p>Output data to an external file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">sink</span>(<span style="color:#e6db74">&#34;record.lis&#34;</span>) <span style="color:#75715e"># writes the output to record.lis instead of printing it to stdout</span>
+</span></span></code></pre></div></li>
+<li>
+<p><code>objects()</code> or <code>ls()</code> returns the object currently stored in the session</p>
+</li>
+<li>
+<p><code>rm()</code> can be used to remove an object</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">rm</span>(list <span style="color:#f92672">=</span> <span style="color:#a6e22e">ls</span>()) <span style="color:#75715e"># remove every object present in memory</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="packages">Packages<a hidden class="anchor" aria-hidden="true" href="#packages">#</a></h2>
+<ul>
+<li><code>library()</code> function (with no args) returns list of installed packages</li>
+<li><code>getOption(&quot;defaultPackages&quot;)</code> returns the list of packages automatically loaded during startup</li>
+<li><code>chooseCRANmirror()</code> function provides a menu to choose a mirror</li>
+<li><code>setRepositories()</code> function provides a menu to select the repos you want to use</li>
+<li><code>update.packages()</code> simply updates all existing packages</li>
+<li><code>search()</code> returns list of loaded packages</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;pacman&#34;</span>) <span style="color:#75715e"># install the package manager</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># install.packages(c(&#34;pkg1&#34;, &#34;pkg2&#34;)) # install multiple packages at once</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(pacman) <span style="color:#75715e"># import without a conformation message, not known</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">require</span>(pacman) <span style="color:#75715e"># import with a confirmation message</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pacman<span style="color:#f92672">::</span><span style="color:#a6e22e">p_load</span>(pacman, ggplot2) <span style="color:#75715e"># alternative way of loading packages</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># detach(ggplot2, unload=TRUE) # detach a package, and unload the namespace</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p_unload</span>(ggplot2) <span style="color:#75715e"># unload package/s</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">p_unload</span>(all) <span style="color:#75715e"># unload all packages</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># remove.packages(c(&#34;pkg1&#34;, &#34;pkg2&#34;)) # remove multiple packages at once</span>
+</span></span></code></pre></div><h2 id="assignment">Assignment<a hidden class="anchor" aria-hidden="true" href="#assignment">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>x <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># c(5, 4, 3, 2, 1) -&gt; x # alternative</span>
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">assign</span>(<span style="color:#e6db74">&#34;z&#34;</span>, <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">30</span>))
+</span></span></code></pre></div><h2 id="data-types">Data Types<a hidden class="anchor" aria-hidden="true" href="#data-types">#</a></h2>
+<ul>
+<li>String</li>
+<li>Character</li>
+<li>Integer</li>
+<li>Double</li>
+<li>Array
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>lt <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span> <span style="color:#75715e"># create a list &#39;lt&#39; with number from 1 to 10</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">abs</span>(lt) <span style="color:#75715e"># applies abs() to every element of lt and prints it</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lt <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e"># returns a new vector with each element multiplied by 2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span>(lt, <span style="color:#ae81ff">0</span>, lt) <span style="color:#f92672">-&gt;</span> js <span style="color:#75715e"># stores a vector consisiting of the elements of lt, then 0 and again the elements of lt</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="type-conversion">Type conversion<a hidden class="anchor" aria-hidden="true" href="#type-conversion">#</a></h3>
+<ul>
+<li><code>as.integer()</code>, <code>as.double()</code>, <code>as.character()</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>x <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;10&#34;</span> <span style="color:#75715e"># 10 is a string here</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">as.integer</span>(x) <span style="color:#75715e"># returns x as integer</span>
+</span></span></code></pre></div><h3 id="special">Special<a hidden class="anchor" aria-hidden="true" href="#special">#</a></h3>
+<ul>
+<li><code>Inf</code> and <code>-Inf</code> represent infinite values</li>
+<li><code>NA</code> represent Not Available</li>
+<li><code>NaN</code> means Not a Number</li>
+<li><code>NULL</code> means nothing</li>
+</ul>
+<h2 id="input-output">Input/Output<a hidden class="anchor" aria-hidden="true" href="#input-output">#</a></h2>
+<ul>
+<li>Read a value from user
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">readline</span>(<span style="color:#e6db74">&#34;What is your name?&#34;</span>)
+</span></span></code></pre></div></li>
+</ul>
+<ul>
+<li>Print value to stdout
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;hello&#34;</span>) <span style="color:#75715e"># directly print values to console</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">paste</span>(<span style="color:#e6db74">&#34;hello, &#34;</span>, name, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>) <span style="color:#75715e"># concatinate string and print them to console</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># instead of setting sep=&#34;&#34;, you can just use paste0()</span>
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="file-handling">File Handling<a hidden class="anchor" aria-hidden="true" href="#file-handling">#</a></h2>
+<ul>
+<li>
+<p>Create a new file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">file.create</span>(<span style="color:#e6db74">&#34;hello.R&#34;</span>)
+</span></span></code></pre></div></li>
+<li>
+<p>Change working directory</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">setwd</span>(<span style="color:#e6db74">&#34;./code&#34;</span>)
+</span></span></code></pre></div></li>
+<li>
+<p>Read table from a file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">read.table</span>(<span style="color:#e6db74">&#34;votes.csv&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># votes &lt;- read.table(&#34;election.csv&#34;, sep=&#34;,&#34;, header = TRUE) # read a csv file</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Read table from a <code>.csv</code> file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">read.csv</span>(<span style="color:#e6db74">&#34;votes.csv&#34;</span>)
+</span></span></code></pre></div></li>
+<li>
+<p>Save a R object into a <code>.Rdata</code> file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">save</span>(dailyCosts, file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dailyCosts.Rdata&#34;</span>)
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="objects">Objects<a hidden class="anchor" aria-hidden="true" href="#objects">#</a></h2>
+<ul>
+<li><code>View(obj_name)</code> opens another tab to display an object</li>
+</ul>
+<h3 id="tables--frames">Tables (Frames)<a hidden class="anchor" aria-hidden="true" href="#tables--frames">#</a></h3>
+<ul>
+<li>
+<p><code>tbName[row, column]</code> gives a element stored at particular row and column of a table</p>
+</li>
+<li>
+<p><code>tbName[, 1]</code> gives the first column of table</p>
+</li>
+<li>
+<p><code>tbName$columnName</code> gives you list of elements in the given column</p>
+</li>
+<li>
+<p><code>rowNames(votes)</code> gives you the list of row names, and <code>colNames(votes)</code> gives the list of column names</p>
+</li>
+<li>
+<p><code>ncol(votes)</code> returns number of columns and <code>nrow(votes)</code> returns number of columns</p>
+</li>
+<li>
+<p><code>unique(votes$voter_category)</code> returns a vector of unique values present inside <em>voter_category</em> column</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>votes <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">read.csv</span>(<span style="color:#e6db74">&#34;election.csv&#34;</span>)
+</span></span><span style="display:flex;"><span>                                        <span style="color:#75715e"># votes$poll # returns vector of values in poll column</span>
+</span></span><span style="display:flex;"><span>                                        <span style="color:#75715e"># votes$poll + votes $mail # this adds up the values of the given two columns for each row</span>
+</span></span><span style="display:flex;"><span>votes<span style="color:#f92672">$</span>total <span style="color:#f92672">&lt;-</span> votes<span style="color:#f92672">$</span>poll <span style="color:#f92672">+</span> votes<span style="color:#f92672">$</span>mail <span style="color:#75715e"># create a new column that contains sum of poll and mail value for each row</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                                        <span style="color:#75715e"># write data back to a csv file, row.names prints the row indexes</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">write.csv</span>(votes, <span style="color:#e6db74">&#34;election.csv&#34;</span>, row.names <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># replaces the values with labels, and excludes -1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">factor</span>(votes<span style="color:#f92672">$</span>Q21,
+</span></span><span style="display:flex;"><span>       label <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Yes&#34;</span>, <span style="color:#e6db74">&#34;No&#34;</span>, <span style="color:#e6db74">&#34;Undecided&#34;</span>),
+</span></span><span style="display:flex;"><span>       exclude <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">-1</span>)
+</span></span><span style="display:flex;"><span>       )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># remove rows where poll is NA</span>
+</span></span><span style="display:flex;"><span>votes <span style="color:#f92672">&lt;-</span> votes[<span style="color:#f92672">!</span><span style="color:#a6e22e">is.na</span>(votes<span style="color:#f92672">$</span>poll)]
+</span></span></code></pre></div><ul>
+<li>
+<p><code>subset()</code> method can be used to generate subsets</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e"># generate a subset of spending table, where the Item Name column is equal to &#34;Mother Dairy Cow Milk&#34;</span>
+</span></span><span style="display:flex;"><span>milkSpend <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">subset</span>(spending, `Item Name` <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Mother Dairy Cow Milk&#34;</span>)
+</span></span></code></pre></div></li>
+<li>
+<p><code>rbind()</code> can be used to combine multiple data frames print</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>sales <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rbind</span>(q1, q2, q3, q4) <span style="color:#75715e"># combine sales from all four quarters</span>
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="vectors">Vectors<a hidden class="anchor" aria-hidden="true" href="#vectors">#</a></h3>
+<ul>
+<li>
+<p>Create a vector from existing vector</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>marks <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>marksFailed <span style="color:#f92672">&lt;-</span> marks<span style="color:#a6e22e">[c</span>(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>)] <span style="color:#75715e"># 9, 5</span>
+</span></span><span style="display:flex;"><span>marksPassed <span style="color:#f92672">&lt;-</span> marks[<span style="color:#f92672">-</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>)] <span style="color:#75715e"># 15, 19, 10, 20</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Relational operations on vectors</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>marks <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>marks <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e"># TRUE TRUE FALSE FALSE TRUE FALSE</span>
+</span></span></code></pre></div></li>
+<li>
+<p><code>which()</code> function can be used, it returns the indices of elements that are true</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>marks <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">which</span>(marks <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>) <span style="color:#75715e"># 1 2 5</span>
+</span></span><span style="display:flex;"><span>marks<span style="color:#a6e22e">[</span>(<span style="color:#a6e22e">which</span>(marks <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>))] <span style="color:#75715e"># 15, 19, 20</span>
+</span></span></code></pre></div></li>
+<li>
+<p>vectors use <code>&amp;</code> and <code>|</code> for logical operations, while <code>&amp;&amp;</code> and <code>||</code> are used for single values</p>
+</li>
+<li>
+<p><code>any()</code> function tells if there is any value that satisfies the condition or not</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>marks <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">any</span>(marks <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>)
+</span></span></code></pre></div></li>
+<li>
+<p><code>all()</code> is the opposite of <code>any()</code> and tells if all of the elements of vector satisfy the condition or not</p>
+</li>
+</ul>
+<h2 id="functions">Functions<a hidden class="anchor" aria-hidden="true" href="#functions">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>x <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">-12</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">abs</span>(x); <span style="color:#75715e"># 12</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">data</span>(); <span style="color:#75715e"># returns info about built in datasets</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">head</span>(mtcars); <span style="color:#75715e"># shows first 6 entries of mtcars dataset</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">str</span>(mtcars); <span style="color:#75715e"># display the structure (column name, its data type and initial values) of mtcars dataset</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sum</span>(x, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">30</span>)
+</span></span></code></pre></div><ul>
+<li>Defining functions
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>getInt <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">function</span>(prompt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Enter Integer: &#34;</span>) {
+</span></span><span style="display:flex;"><span>    votes <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">as.integer</span>(<span style="color:#a6e22e">readline</span>(prompt))
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># return(votes) # ommited as R automatically returns last value</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="data-visualization">Data Visualization<a hidden class="anchor" aria-hidden="true" href="#data-visualization">#</a></h2>
+<ul>
+<li>
+<p>R by default provides <code>graphics</code> library to visualize data, other more advanced packages can also be used like <code>ggplot2</code></p>
+</li>
+<li>
+<p>Scatter Plot</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">plot </span>(
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> mtcars<span style="color:#f92672">$</span>mpg,
+</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">=</span> mtcars<span style="color:#f92672">$</span>wt,
+</span></span><span style="display:flex;"><span>    main <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Scatter Plot: Weight vs Miles Per Gallon&#34;</span>,
+</span></span><span style="display:flex;"><span>    xlab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Miles Per Gallon&#34;</span>,
+</span></span><span style="display:flex;"><span>    ylab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Weight&#34;</span>,
+</span></span><span style="display:flex;"><span>    col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>,
+</span></span><span style="display:flex;"><span>    pch <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;*&#34;</span>, <span style="color:#75715e"># plotting character (can be a symbol or a integer code)</span>
+</span></span><span style="display:flex;"><span>    cex <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.5</span> <span style="color:#75715e"># represents the size of plotting character (1 means default)</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grid</span>() <span style="color:#75715e"># turns on grid</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Single Line Plot</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>time_vec  <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>var1      <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cumsum</span>(<span style="color:#a6e22e">rnorm</span>(<span style="color:#ae81ff">10</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(
+</span></span><span style="display:flex;"><span>  x <span style="color:#f92672">=</span> time_vec,
+</span></span><span style="display:flex;"><span>  y <span style="color:#f92672">=</span> var1,
+</span></span><span style="display:flex;"><span>  type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;b&#34;</span>,
+</span></span><span style="display:flex;"><span>  col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;darkgreen&#34;</span>,
+</span></span><span style="display:flex;"><span>  lwd <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>  pch <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>,
+</span></span><span style="display:flex;"><span>  main <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Single Line Plot&#34;</span>,
+</span></span><span style="display:flex;"><span>  xlab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Day&#34;</span>,
+</span></span><span style="display:flex;"><span>  ylab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Value&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="plot-function">Plot Function<a hidden class="anchor" aria-hidden="true" href="#plot-function">#</a></h3>
+<ul>
+<li>
+<p><strong>Note:</strong> ann parameter doesn&rsquo;t work in RStudio</p>
+</li>
+<li>
+<p>Line Types</p>
+<ol>
+<li>Solid</li>
+<li>Dashed</li>
+<li>Dotted</li>
+<li>DotDash</li>
+<li>LongDash</li>
+<li>TwoDash</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(mtcars<span style="color:#f92672">$</span>cyl, mtcars<span style="color:#f92672">$</span>mpg, ann <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>); <span style="color:#75715e"># ann parameter control the default annotation (xlab and ylab)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(mtcars<span style="color:#f92672">$</span>disp, mtcars<span style="color:#f92672">$</span>mpg, ann <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>, xlim <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">500</span>), ylim <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">35</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(data, type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;l&#39;</span>) <span style="color:#75715e"># simple line graph</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(data, type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;b&#39;</span>) <span style="color:#75715e"># points highlighted with circle</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(data, type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;o&#39;</span>) <span style="color:#75715e"># same as &#39;b&#39;, point are over line</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(data, type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;c&#39;</span>) <span style="color:#75715e"># instead of points, lines cut</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(data, type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;b&#39;</span>, col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blue&#34;</span>) <span style="color:#75715e"># blue colored line</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(data, type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;b&#39;</span>, col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>, lty <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) <span style="color:#75715e"># line type (2 means dashed)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(data, type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;b&#39;</span>, col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>, lty <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, lwd <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.5</span>) <span style="color:#75715e"># line width</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(data, type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;b&#39;</span>, col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">points</span>(data, col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blue&#34;</span>, pch <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>, cex <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.5</span>, bg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lightblue&#34;</span>)  <span style="color:#75715e"># create diamond shaped points</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># two line graph in same plane</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>(data1, type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;b&#39;</span>, xlim<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">20</span>), ylim<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">20</span>))
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">lines</span>(data2, type <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;b&#39;</span>, col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># put labels on x-axis after creation of graph</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">plot</span>( rainfall, main <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Monthly Rainfall&#34;</span>, xlab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Months&#34;</span>, ylab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Rainfall&#34;</span>, ylim <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">150</span>), ann <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">axis</span>(<span style="color:#ae81ff">1</span>, at <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span>, labels <span style="color:#f92672">=</span> month)
+</span></span></code></pre></div><h3 id="barplot">Barplot<a hidden class="anchor" aria-hidden="true" href="#barplot">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>dealer <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;B&#34;</span>, <span style="color:#e6db74">&#34;C&#34;</span>, <span style="color:#e6db74">&#34;D&#34;</span>)
+</span></span><span style="display:flex;"><span>cars_sold <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">25</span>, <span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">50</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">barplot</span>(cars_sold,names.arg <span style="color:#f92672">=</span> dealer, main <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bar Chart: Cars sold by dealers&#34;</span>, xlab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Dealers&#34;</span>, ylab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Cars Sold&#34;</span>) <span style="color:#75715e">#names.arg is a list of values to be displayed under the bars</span>
+</span></span></code></pre></div><h2 id="help">Help<a hidden class="anchor" aria-hidden="true" href="#help">#</a></h2>
+<ul>
+<li><code>help.start()</code> loads the R documentation in html</li>
+<li>If you use <code>help()</code> it will look for the item&rsquo;s help page. If it doesn&rsquo;t encounter any conflicts, then it will just present the man page otherwise it will show the search results</li>
+<li>Alternatively you can use <code>help.search(&quot;crayon&quot;)</code> or <code>??crayon</code> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> to search for man pages, instead of directly loading the relevant one</li>
+<li><code>example(&quot;crayon&quot;)</code> <sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> will return an example usage of the topic</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#f92672">?</span>mpg <span style="color:#75715e"># returns info about mpg dataset</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">help</span>(mpg) <span style="color:#75715e"># alternative way</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">?</span><span style="color:#a6e22e">View</span>() <span style="color:#75715e"># returns info about View() function</span>
+</span></span></code></pre></div><h2 id="faq">FAQ<a hidden class="anchor" aria-hidden="true" href="#faq">#</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=3FP09QnASRQ">Assignment in R: Assignment operator or equals sign?</a></li>
+</ul>
+<h2 id="rstudio">Rstudio<a hidden class="anchor" aria-hidden="true" href="#rstudio">#</a></h2>
+<h3 id="shortcuts">shortcuts<a hidden class="anchor" aria-hidden="true" href="#shortcuts">#</a></h3>
+<ul>
+<li><code>C-RETURN</code> - Run the code (runs the current line in console)</li>
+<li><code>C-l</code> - clear console</li>
+</ul>
+<h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
+<ul>
+<li><a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Packages">R Manual</a></li>
+<li></li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Crayon is a package for colored terminal output&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://mohitdudi.github.io/">Mohit</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

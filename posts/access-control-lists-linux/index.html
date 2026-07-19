@@ -26,7 +26,7 @@ setfacl -b filename # remove all entries
 <meta name="author" content="Mohit">
 <link rel="canonical" href="https://mohitdudi.github.io/posts/access-control-lists-linux/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.17b5796ebc67880ff0e8f6b418bcb0e56541f4642ff2147fc38e32471fbd9fa3.css" integrity="sha256-F7V5brxniA/w6Pa0GLyw5WVB9GQv8hR/w44yRx&#43;9n6M=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://mohitdudi.github.io/favicon.ico">
+<link rel="icon" href="https://mohitdudi.github.io/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://mohitdudi.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://mohitdudi.github.io/favicon-32x32.png">
 <link rel="apple-touch-icon" href="https://mohitdudi.github.io/apple-touch-icon.png">
@@ -143,7 +143,7 @@ setfacl -b filename # remove all entries
     "name": "Mohit",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://mohitdudi.github.io/favicon.ico"
+      "url": "https://mohitdudi.github.io/images/favicon.ico"
     }
   }
 }
@@ -195,6 +195,7 @@ setfacl -b filename # remove all entries
 
 </div>
   </header> 
+
   <div class="post-content md-content"><ul>
 <li>applicable for both files and folders</li>
 </ul>
@@ -299,6 +300,53 @@ setfacl -b filename # remove all entries
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

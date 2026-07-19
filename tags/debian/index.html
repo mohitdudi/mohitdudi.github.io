@@ -11,7 +11,7 @@
 <meta name="author" content="">
 <link rel="canonical" href="https://mohitdudi.github.io/tags/debian/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.17b5796ebc67880ff0e8f6b418bcb0e56541f4642ff2147fc38e32471fbd9fa3.css" integrity="sha256-F7V5brxniA/w6Pa0GLyw5WVB9GQv8hR/w44yRx&#43;9n6M=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://mohitdudi.github.io/favicon.ico">
+<link rel="icon" href="https://mohitdudi.github.io/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://mohitdudi.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://mohitdudi.github.io/favicon-32x32.png">
 <link rel="apple-touch-icon" href="https://mohitdudi.github.io/apple-touch-icon.png">
@@ -119,11 +119,6 @@
     <h2 class="entry-hint-parent">DWL install on Debian
     </h2>
   </header>
-  <div class="entry-content">
-    <p> debian 12 was used to build wlroots 0.18 and dwl 0.7
-Adding backport and testing repo’s Add following lines to your /etc/apt/sources.list These repo’s are required to pull some version specific packages deb http://deb.debian.org/debian bookworm-backports main deb http://deb.debian.org/debian sid main Install Required Packages Same packages are needed by both wlroots and dwl Some packages are pulled from backport and testing repo’s due to version requirements This list of packages is not verbose (as of now) apt install -t bookworm-backports libwayland-server0 apt install -t sid libliftoff-dev apt install meson cmake libgbm-dev glslang-dev glslang-tools libudev-dev libseat-dev hwdata libdisplay-info-dev libinput-dev libxcb-dri3-dev libxcb-present-dev libxcb-render-util0-dev libxcb-xinput-dev xwayland libxcb-errors-dev libxcb-composite0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-res0-dev Wlroots Building wlroots is recommended as you can customize your build (enabling Xwayland support)
-...</p>
-  </div>
   <footer class="entry-footer">
 
 <span title='2025-02-26 10:19:00 +0530 IST'>February 26, 2025</span>&nbsp;·&nbsp;<span>Mohit</span></footer>
@@ -135,9 +130,6 @@ Adding backport and testing repo’s Add following lines to your /etc/apt/source
     <h2 class="entry-hint-parent">Debian WiFi Issue
     </h2>
   </header>
-  <div class="entry-content">
-    <p>What happened I have faced this issue multiple times after installing debian Each time during installation WiFi worked but after that it didn’t, initially I thought that there was some issue of firmware But this time after installation wifi worked, but nmcli device had a problem, it always showed that the device was unmanaged So I tried different things and finally was able to resolve the issue Solution (Source) Just add the following line to your grub config (/etc/grub.d/10_linux) GRUB_CMDLINE_LINUX_DEFAULT=&#34;quiet splash acpi=force&#34; After that generate grub config grub-mkconfig Now just reboot </p>
-  </div>
   <footer class="entry-footer">
 
 <span title='2025-01-30 10:14:00 +0530 IST'>January 30, 2025</span>&nbsp;·&nbsp;<span>Mohit</span></footer>

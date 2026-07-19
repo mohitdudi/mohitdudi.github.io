@@ -146,7 +146,7 @@
 &lt;p&gt;Special symbols allowed are . (dot) and _ (underscore)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;If name must start with ‘.’ or a letter, and if it starts with ‘.’ the second character must not be a digit. Names are effectively unlimited in length.&lt;/p&gt;
+&lt;p&gt;Variable Name must start with ‘.’ or a letter, and if it starts with ‘.’ the second character must not be a digit. Names are effectively unlimited in length.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Semicolon or newline separate commands&lt;/p&gt;
